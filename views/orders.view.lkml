@@ -13,7 +13,7 @@ view: orders {
     sql: ${TABLE}.created_at ;;
   }
   dimension: status {
-    type: number
+    type: string
     sql: ${TABLE}.status ;;
   }
   dimension: user_id {

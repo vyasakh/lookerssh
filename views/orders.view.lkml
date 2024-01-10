@@ -14,8 +14,11 @@ view: orders {
   }
   dimension: status {
     type: string
-    sql: ${TABLE}.status = "Completed";;
-
+    sql: ${TABLE}.status;;
+  }
+  dimension: status_completed {
+    type: string
+    sql: ${status}="Completed" ;;
   }
   dimension: user_id {
     type: number

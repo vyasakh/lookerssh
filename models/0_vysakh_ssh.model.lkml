@@ -2,6 +2,7 @@ connection: "thelook"
 ##
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/testa.dashboard.lookml"
 
 datagroup: 0_vysakh_ssh_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;

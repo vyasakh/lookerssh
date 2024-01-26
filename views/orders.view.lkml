@@ -23,24 +23,33 @@ view: orders {
   }
   measure: count {
     type: count
+    # value_format: "0"
+    value_format_name: decimal_0
+    drill_fields: [detail*]
+  }
+
+  measure: count_test {
+    type: number
+    value_format_name: decimal_0
+    sql: ${count}*1000000 ;;
     drill_fields: [detail*]
   }
 
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.id,
-	users.first_name,
-	users.last_name,
-	billion_orders.count,
-	fakeorders.count,
-	hundred_million_orders.count,
-	hundred_million_orders_wide.count,
-	order_items.count,
-	order_items_vijaya.count,
-	ten_million_orders.count
-	]
+  id,
+  users.id,
+  users.first_name,
+  users.last_name,
+  billion_orders.count,
+  fakeorders.count,
+  hundred_million_orders.count,
+  hundred_million_orders_wide.count,
+  order_items.count,
+  order_items_vijaya.count,
+  ten_million_orders.count
+  ]
   }
 
 }

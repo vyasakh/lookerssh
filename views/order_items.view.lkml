@@ -38,4 +38,12 @@ view: order_items {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
   }
+  measure: count_primary_key {
+    type: count_distinct
+    sql: ${id} ;;
+  }
+  measure: sum_sales {
+    type: sum
+    sql: ${sale_price} ;;
+  }
 }

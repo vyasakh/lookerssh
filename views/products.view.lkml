@@ -11,6 +11,7 @@ view: products {
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    required_access_grants: [test]
   }
   dimension: category {
     type: string

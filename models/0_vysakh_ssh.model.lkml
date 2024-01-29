@@ -16,6 +16,7 @@ access_grant: test{
 }
 
 explore: billion_orders {
+  required_access_grants: [test]
   join: orders {
     type: left_outer
     sql_on: ${billion_orders.order_id} = ${orders.id} ;;

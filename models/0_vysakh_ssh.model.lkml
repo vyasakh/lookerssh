@@ -10,6 +10,11 @@ datagroup: 0_vysakh_ssh_default_datagroup {
 
 persist_with: 0_vysakh_ssh_default_datagroup
 
+access_grant: test{
+  user_attribute:   ua_souvik
+  allowed_values: [ "lord" ]
+}
+
 explore: billion_orders {
   join: orders {
     type: left_outer

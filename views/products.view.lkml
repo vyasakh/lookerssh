@@ -6,10 +6,12 @@ view: products {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    required_access_grants: [test]
   }
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    required_access_grants: [test]
   }
   dimension: category {
     type: string

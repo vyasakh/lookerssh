@@ -54,6 +54,24 @@ explore: fakeorders {
   }
 }
 
+
+
+explore: testing1{
+  from: fakeorders
+  join: orders {
+    type: left_outer
+    sql_on: ${testing1.order_id} = ${orders.id} ;;
+    relationship: many_to_one
+  }
+
+  join: users {
+    type: left_outer
+    sql_on: ${orders.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+}
+
+
 explore: fatal_error_user_derived_base {}
 
 explore: flights {}

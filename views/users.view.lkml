@@ -54,18 +54,31 @@ view: users {
     drill_fields: [detail*]
   }
 
+  measure: formatted_count {
+    type: count
+    html:
+    {% if value > 100 %}
+      <span style="color:darkgreen;">{{ rendered_value }}</span>
+    {% elsif value > 50 %}
+      <span style="color:goldenrod;">{{ rendered_value }}</span>
+    {% else %}
+      <span style="color:darkred;">{{ rendered_value }}</span>
+    {% endif %} ;;
+  }
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	first_name,
-	last_name,
-	events.count,
-	orders.count,
-	saralooker.count,
-	sindhu.count,
-	user_data.count
-	]
+  id,
+  first_name,
+  last_name,
+  events.count,
+  orders.count,
+  saralooker.count,
+  sindhu.count,
+  user_data.count
+  ]
   }
 
 }

@@ -14,14 +14,29 @@ view: orders {
   }
   dimension: status {
     type: string
-    sql: ${TABLE}.status = "Completed";;
+    sql: ${TABLE}.status;;
 
   }
+
+
+  dimension: name_with_html_tags {
+    type: string
+    sql: concat("<ul><li>",${users.first_name},"-",${users.last_name},"</li></ul>") ;;
+
+  }
+
+  dimension: name_without_html_tags {
+    type: string
+    sql: ${name_with_html_tags} ;;
+    html: {{ value| strip_html }};;
+  }
+
 
   dimension: duplicates {
     type: string
     sql: "Hello" ;;
   }
+
   dimension: user_id {
     type: number
     # hidden: yes
